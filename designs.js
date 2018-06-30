@@ -16,8 +16,15 @@ function makeGrid(cols, rows) {
             $('#table' + i).append('<td></td>');
         }
 }
-    $('td').click(function createColor() {
+
+   $('td').click(function createColor() {
         color = $('#colorPicker').val();
+       if ($(this).attr('style')) {
+           $(this).removeAttr('style')
+
+       }else {
         $(this).attr('style', 'background-color:' + color);
+       }
     })
 }
+
